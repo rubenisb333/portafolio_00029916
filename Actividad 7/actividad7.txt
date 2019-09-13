@@ -1,0 +1,38 @@
+1////////////////////////////////////////////////////
+s = initialize 
+
+if(empty(s))
+   count<<"";
+else{
+
+pop(s);
+i = pop(s);
+  return false;
+
+2////////////////////////////////////////////////////
+s = initialize
+
+if(empty(s))
+    cout << "" ;
+else{
+    i=pop(s);
+    cout << peek(s);
+    push(i,s);
+return false
+}
+
+3/////////////////////////////////////////////////////
+int pila = [];
+bool validar = false;
+int valor =0;
+
+if (empty!(temp));
+	valor = pop(p)
+	validar = true
+
+else{
+ (validar)
+	count<<"Valor del miembro es: "<< valor;
+else
+	count<<"Miembro no existe";
+{
