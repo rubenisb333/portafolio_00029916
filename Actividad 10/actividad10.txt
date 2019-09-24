@@ -1,0 +1,19 @@
+Convertir de manera intuitiva infija a postfija.
+
+A-B/(C*D$E)
+A-B/(C*DE$)
+A-B/(CDE$*)
+A-B(CDE$*)/
+AB(CDE$*)/-
+ABCDE$*/-
+
+segundo
+
+((A+B)*C-(D-E))$(F+G)
+((AB+)*C-(DE-))$(FG+)
+(AB+C*)-(DE-)$(FG+)
+(AB+C*)(DE-)-$(FG+)
+(AB+C*)(DE-)-(FG+)$
+AB+C*DE--FG+$
+
+precedencia: parentesis > potencia > mult y div > suma y resta
