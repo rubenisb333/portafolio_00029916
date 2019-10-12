@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 enum generos{ciencia_ficcion,aventura,policial,romance,misterio};
+int ctador=0;
 
 struct TLibro{
     int isbn;
@@ -62,15 +62,14 @@ Libro solicitarLibro(){
         }
     }while(continuar);
     
-    //---Devolver libro ya poblado---
     return p;
+    ctador++;
 }
 
 void mostrarLibro(Libro p){
     cout << "ISBN: " << p.isbn << endl;
     cout << "Titulo: " << p.titulo << endl;
     cout << "Autor: " << p.autor << endl;
-    
     cout << "Genero: ";
     switch(p.genero){
         case ciencia_ficcion: cout << "Ciencia ficcion" << endl;
@@ -241,6 +240,56 @@ bool buscarLibro() {
     //Si s==NULL entonces el libro NO se encuentra
     return (s != NULL);
 }
+//agregando 3 funciones al ejercicio
+	bool buscarLibroespanol() {
+	     
+	    Nodo *s = pInicio;
+	
+	    while(s != NULL && (s->dato).espanol !=  true)
+	        s = s->sig;
+	    
+	    //Si s!=NULL entonces el libro SI se encuentra
+	    //Si s==NULL entonces el libro NO se encuentra
+	    return (s != NULL);
+	}
+
+bool buscarLibrocficcion() {
+	     
+	  
+	    
+	    Nodo *s = pInicio;
+	
+	    while(s != NULL && (s->dato).genero !=  ciencia_ficcion)
+	        s = s->sig;
+	    
+	    //Si s!=NULL entonces el libro SI se encuentra
+	    //Si s==NULL entonces el libro NO se encuentra
+	    return (s != NULL);
+	}
+void eliminarLibrosmisterio(){
+
+  
+    for(int i=0; i<ctador;i++);{
+	
+    Nodo *p = pInicio, *q = NULL;
+    
+    while(p != NULL && (p->dato).genero != misterio){
+        q = p;
+        p = p->sig;
+    }
+    if(p == NULL){
+        cout << "Libro a borrar NO existe" << endl;
+        return;
+    }
+    if(q == NULL)
+        pInicio = p->sig;
+    else
+        q->sig = p->sig;
+    delete(p);
+    cout << "Libro ha sido borrado" << endl;
+}
+cout<<"Libros de misterio borrados";	
+}
 
 int main(){
     cout << "Inicializando..." << endl;
@@ -251,7 +300,7 @@ int main(){
         int opcion = 0;
         cout << "Menu: \n\t1) Agregar Libro\n\t2) Ver Libros"
             << "\n\t3) Eliminar libro\n\t4) Buscar Libro"
-            << "\n\t5) Salir\n\tOpcion elegida: ";
+            << "\n\t5) Salir\n\t6) Buscar libros en espanol\n\t7) Buscar libros de ciencia ficcion \n\t8) Eliminar los libros de misterio\n\tOpcion elegida: ";
         cin >> opcion;
         switch(opcion){
             case 1: cout << "Agregando..." << endl;
@@ -268,11 +317,24 @@ int main(){
                     cout << "El libro SI se encuentra" << endl;
                 else
                     cout << "El libro NO se encuentra" << endl;
-                //cout << "El libro " << (buscarLibro() ? "SI" : "NO") << " se encuentra" << endl;
+        
             break;
             case 5: continuar = false;
             break;
-            default: cout << "Opcion erronea!" << endl;
+            case 6: cout << "Buscando..." << endl;
+                if(buscarLibroespanol() )
+                    cout << "Si hay libros en espanol" << endl;
+                else
+                    cout << "No se encuentran libros en espanol" << endl;
+            case 7: cout << "Buscando..." << endl;
+                if( buscarLibrocficcion())
+                    cout << "Si hay libros de ciencia ficcion" << endl;
+                else
+                    cout << "No se encuentran libros de ciencia ficcion" << endl;
+                    case 8: cout << "Eliminando..." << endl;
+         cout<<"Eliminando...";
+				eliminarLibrosmisterio();
+			default: cout << "Opcion erronea!" << endl;
             break;
         }
     }while(continuar);
