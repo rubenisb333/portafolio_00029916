@@ -1,0 +1,73 @@
+Ejercicio 2.3.1
+
+Convertir prefija y postfija
+
+A) A+B-C
+
+R/////Prefija-------+AB
+R/////Postfija-----AB+C- 
+
+
+B)(A + B)*(C - D)$E*F
+
+Prefija
+    (A + B)*(C - D)$E*F    
+    (+AB)*$(-CD)E*F
+    +AB * $ - CD * EF
+    *+AB $ - CD * EF
+R/////*+ AB $- CD * EF
+
+
+Postfija
+      (A + B)*(C - D)$E*F
+      (A + B)*(C - D)E$*F
+      (AB+) *(CD-)E$*F
+      (AB+CD*-)EF$* 
+R///// AB+CD*-EF$*
+
+
+C) (A+B)*(C$ (D-E)+F)-G
+
+Prefija
+      (A + B)*(C$ (D-E)+F)-G
+      (A + B)*($C(D-E)+F)-G
+      (+AB)*($C(-DE)+F)-G
+      *(+AB)($C(-DE+F)-G
+      *(+AB)($C(-+DE-FG) 
+R///// *+AB$C-+DE-FG  
+
+Postfija 
+        (A + B)*(C$ (D-E)+F)-G
+        (A + B)*(C(D-E)$+F)-G
+        (AB+)*(C(DE-)$+F)-G
+        (AB+)*C(DE-)$+F-G
+        AB+C(DE-)*$+F-G
+        AB+CDE*$-+F-G
+R/////  AB+CDE*$-F+G-
+
+
+
+D)  A+ (((B-C)*(D-E)+F)/G) $(H-J)
+
+Prefija
+        A+ (((B-C)*(D-E)+F)/G) $(H-J)
+        A+(((B-C)*$(D-E)+F)/G)(H-J)
+        A+((-BC)*$(-DE)+F)/G(-HJ)
+        A+*(-BC)$(-DE)+F)/G(-HJ)
+        A+*(-BC)$/(-DE)+FG(-HJ)
+        +A*-BC$/-DE+FG-HJ
+R/////  +A*-BC$/+-DEFG-HJ
+     
+Postfija
+        A+ (((B-C)*(D-E)+F)/G) $(H-J)
+        A+(((B-C)*(D-E)+F/G)(H-J)$
+        A+((BC-)*(DE-)+F/G)(HJ-)$
+        A+(BC-)(DE-)+F/G*(HJ-)$
+        A+BC-(DE-+FG)*/(HJ-)$
+        ABC+-(DEFG)*-+/HJ$-  
+R/////  ABC+-DEFG*-+/HJ$-
+
+
+
+
+ 
