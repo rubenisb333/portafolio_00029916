@@ -1,0 +1,35 @@
+///////////////////Arbol 1///////////
+
+Raíz: A
+Ramas: B,C,D,E
+Hojas: G,H,I,F
+=============================================================
+Niveles de nodos:
+
+A=0
+B=1
+C=1
+D=2
+E=2
+F=2
+G=3
+H=3
+I=3
+===============================================================
+Profundidad = 3
+Peso = 9
+Orden = 2
+==============================================================
+
+Sub-Arbol:  E
+          /   \
+         H     I
+        
+=============================================================
+No es árbol lleno por que los nodos tiene 0 o 2 hijos
+
+No es árbol perfecto o completo.
+=============================================================
+Recorrido Pre-orden: A,B,D,G,C,E,H,I,F
+Recorrido Post-orden: G,D,B,H,I,E,F,C,A
+Recorrido in-orden: G,D,B,A,H,E,I,C,F
