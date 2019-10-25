@@ -22,11 +22,11 @@ Profundidad = 4
 Peso = 12
 Orden = 2
 ===============================================
-Sub-Arbol:         D
-                 /    \
-                G      H
-                     /   \ 
-                    K     L
+Sub-Arbol:  D
+          /    \
+         G      H
+              /   \ 
+             K     L
 
 No es lleno o no es estricto
 No es perfecto o completo
