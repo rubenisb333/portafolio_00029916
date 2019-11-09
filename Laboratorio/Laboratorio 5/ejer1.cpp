@@ -107,7 +107,7 @@ void recorrerArbol(Arbol a){
 	cout<<endl;
 }
 
-//codigo para el ejercicio en especifico
+//codigo especifico
 void datos(Arbol a, int *der, int *izq){
     if(a->der != NULL){
         (*der)++;
